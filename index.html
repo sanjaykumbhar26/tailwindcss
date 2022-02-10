@@ -1,0 +1,442 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./tailwind/output.css" rel="stylesheet">
+  <link href="./assets/css/slick.css" rel="stylesheet">
+</head>
+<body>
+  <!-- This example requires Tailwind CSS v2.0+ -->
+  <nav class="bg-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between">
+        <div class="flex space-x-7">
+          <div>
+            <!-- Website Logo -->
+            <a href="#" class="flex items-center py-4 px-2">
+              <img class="h-10" src="assets/imgs/logos/monst-logo.svg" alt="">
+            </a>
+          </div>
+          <!-- Primary Navbar items -->
+          <div class="hidden md:flex items-center space-x-1">
+            <a href="" class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold ">Home</a>
+            <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Services</a>
+            <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">About</a>
+            <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact Us</a>
+          </div>
+        </div>
+        <!-- Secondary Navbar items -->
+        <div class="hidden md:flex items-center space-x-3 ">
+          <a href="" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Log In</a>
+          <a href="" class="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300">Sign Up</a>
+        </div>
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+          <button class="outline-none mobile-menu-button">
+          <svg class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+            x-show="!showMenu"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        </div>
+      </div>
+    </div>
+    <!-- mobile menu -->
+    <div class="hidden mobile-menu">
+      <ul class="">
+        <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
+        <li><a href="#services" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Services</a></li>
+        <li><a href="#about" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">About</a></li>
+        <li><a href="#contact" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Contact Us</a></li>
+      </ul>
+    </div>
+    <script>
+      const btn = document.querySelector("button.mobile-menu-button");
+      const menu = document.querySelector(".mobile-menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+  </nav>
+  
+<div class="relative bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+    <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+      <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <polygon points="50,0 100,0 50,100 0,100" />
+      </svg>
+
+      <div>
+     
+
+        <!--
+          Mobile menu, show/hide based on menu open state.
+
+          Entering: "duration-150 ease-out"
+            From: "opacity-0 scale-95"
+            To: "opacity-100 scale-100"
+          Leaving: "duration-100 ease-in"
+            From: "opacity-100 scale-100"
+            To: "opacity-0 scale-95"
+        -->
+        <div class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right hidden mobile-menu">
+          <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+            <div class="px-5 pt-4 flex items-center justify-between">
+              <div>
+                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
+              </div>
+              <div class="-mr-2">
+                <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                  <span class="sr-only">Close main menu</span>
+                  <!-- Heroicon name: outline/x -->
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="px-2 pt-2 pb-3 space-y-1">
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Product mobile </a>
+
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Features</a>
+
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Marketplace</a>
+
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Company</a>
+            </div>
+            <a href="#" class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100"> Log in </a>
+          </div>
+        </div>
+      </div>
+
+      <main class="mx-auto max-w-7xl px-4 sm:pt-12 sm:px-6  lg:px-8 xl:mt-28">
+        <div class="sm:text-center lg:text-left">
+          <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+            <span class="block xl:inline">Data to enrich your</span>
+            <span class="block text-indigo-600 xl:inline">online business</span>
+          </h1>
+          <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+          <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+            <div class="rounded-md shadow">
+              <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"> Get started </a>
+            </div>
+            <div class="mt-3 sm:mt-0 sm:ml-3">
+              <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"> Live demo </a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+    <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="">
+  </div>
+</div>
+
+<section class="py-20 bg-slate-50" id="how-we-work">
+  <div class="container">
+      <div class="flex flex-wrap items-center justify-between max-w-2xl lg:max-w-full mb-12">
+          <div class="w-full lg:w-1/2 mb-4 lg:mb-0">
+              <h2 class="text-3xl md:text-4xl font-bold font-heading wow animate__animatedanimated animate__fadeInDown">
+                  <span>We are</span>
+                  <span class="text-blue-500">awesome team</span><br />
+                  <span>for your business dream</span>
+              </h2>
+          </div>
+          <div class="w-full lg:w-1/2 lg:pl-16">
+              <p class="text-blueGray-400 leading-loose wow animate__animatedanimated animate__fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus eget justo et iaculis. Quisque vitae nulla malesuada, auctor arcu vitae, luctus nisi. Sed elementum vitae ligula id imperdiet.</p>
+          </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 -mb-6 text-center">
+          <div class="hover-up-5 w-full md:w-1/2 lg:w-1/3 px-3 mb-6 wow animate__animatedanimated animate__fadeInUp" data-wow-delay=".3s">
+              <div class="p-12 bg-white shadow rounded">
+                  <div class="flex w-12 h-12 mx-auto items-center justify-center text-blue-800 font-bold font-heading bg-blue-200 rounded-full">1</div>
+                  <img class="h-48 mx-auto my-4" src="assets/imgs/illustrations/eating.svg" alt="" />
+                  <h3 class="mb-2 font-bold font-heading">Project Initialization</h3>
+                  <p class="text-sm text-blueGray-400 leading-relaxed">Sed ac magna sit amet risus tristique interdum at vel velit. In hac habitasse platea dictumst.</p>
+              </div>
+          </div>
+          <div class="hover-up-5 w-full md:w-1/2 lg:w-1/3 px-3 mb-6 wow animate__animatedanimated animate__fadeInUp" data-wow-delay=".5s">
+              <div class="p-12 bg-white shadow rounded">
+                  <div class="flex w-12 h-12 mx-auto items-center justify-center text-blue-800 font-bold font-heading bg-blue-200 rounded-full">2</div>
+                  <img class="h-48 mx-auto my-4" src="assets/imgs/illustrations/space.svg" alt="" />
+                  <h3 class="mb-2 font-bold font-heading">Looking for Creative</h3>
+                  <p class="text-sm text-blueGray-400 leading-relaxed">Sed ac magna sit amet risus tristique interdum at vel velit. In hac habitasse platea dictumst.</p>
+              </div>
+          </div>
+          <div class="hover-up-5 w-full lg:w-1/3 px-3 mb-6">
+              <div class="p-12 bg-white shadow rounded wow animate__animatedanimated animate__fadeInUp" data-wow-delay=".7s">
+                  <div class="flex w-12 h-12 mx-auto items-center justify-center text-blue-800 font-bold font-heading bg-blue-200 rounded-full">3</div>
+                  <img class="h-48 mx-auto my-4" src="assets/imgs/illustrations/tasks.svg" alt="" />
+                  <h3 class="mb-2 font-bold font-heading">Market Development</h3>
+                  <p class="text-sm text-blueGray-400 leading-relaxed">Sed ac magna sit amet risus tristique interdum at vel velit. In hac habitasse platea dictumst.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="py-12 md:py-20">
+  <div class="container px-4 mx-auto">
+      <div class="flex flex-wrap -mx-3">
+          <div class="relative w-full lg:w-1/3 mb-8 lg:mb-0 text-center lg:text-left">
+              <div class="max-w-md lg:max-w-xs lg:pr-16 mx-auto lg:ml-0 mb-6 lg:mb-0">
+                  <h2 class="text-3xl md:text-4xl mb-4 font-bold font-heading wow animate__animated animate__fadeInUp" data-wow-delay=".3s">Simple Solution for <span class="text-blue-500">Complex</span> Connections</h2>
+                  <p class="text-xs md:text-base text-blueGray-400 leading-loose wow animate__animated animate__fadeInUp" data-wow-delay=".9s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus eget justo et iaculis.</p>
+              </div>
+              <div class="lg:absolute lg:bottom-0 lg:left-0 flex justify-center">
+                  <div id="carausel-2-columns-1-arrows" class="flex"></div>
+              </div>
+          </div>
+          <div class="w-full lg:w-2/3 flex flex-wrap">
+              <div class="relative w-full">
+                  <div class="carausel-2-columns slick-carausel" id="carausel-2-columns-1">
+                      <div class="px-3 pb-5">
+                          <div class="card-slider group">
+                              <img class="rounded-xl" src="assets/imgs/placeholders/img-2.jpg" alt="" />
+                              <div class="flex justify-between items-end">
+                                  <div>
+                                      <h1 class="mt-5 text-xl font-semibold group-hover:text-blue-500">User growth</h1>
+                                      <p class="mt-2 text-xs text-gray-500">Harvard university</p>
+                                  </div>
+                                  <div>
+                                      <a class="tracking-wide hover-up-2 mr-2 inline-block px-4 py-3 text-xs text-blue-500 font-semibold leading-none border border-blue-200 hover:border-blue-500 hover:text-white hover:bg-blue-500 rounded">View Details</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="px-3 pb-5">
+                          <div class="card-slider group">
+                              <img class="rounded-xl" src="assets/imgs/placeholders/img-3.jpg" alt="" />
+                              <div class="flex justify-between items-end">
+                                  <div>
+                                      <h1 class="mt-5 text-xl font-semibold group-hover:text-blue-500">Product Launch</h1>
+                                      <p class="mt-2 text-xs text-gray-500">Cocacola., Co</p>
+                                  </div>
+                                  <div>
+                                      <a class="tracking-wide hover-up-2 mr-2 inline-block px-4 py-3 text-xs text-blue-500 font-semibold leading-none border border-blue-200 hover:border-blue-500 hover:text-white hover:bg-blue-500 rounded">View Details</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="px-3 pb-5">
+                          <div class="card-slider group">
+                              <img class="rounded-xl" src="assets/imgs/placeholders/img-4.jpg" alt="" />
+                              <div class="flex justify-between items-end">
+                                  <div>
+                                      <h1 class="mt-5 text-xl font-semibold group-hover:text-blue-500">New Event</h1>
+                                      <p class="mt-2 text-xs text-gray-500">Oxford university</p>
+                                  </div>
+                                  <div>
+                                      <a class="tracking-wide hover-up-2 mr-2 inline-block px-4 py-3 text-xs text-blue-500 font-semibold leading-none border border-blue-200 hover:border-blue-500 hover:text-white hover:bg-blue-500 rounded">View Details</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="px-3 pb-5">
+                          <div class="card-slider group">
+                              <img class="rounded-xl" src="assets/imgs/placeholders/img-5.jpg" alt="" />
+                              <div class="flex justify-between items-end">
+                                  <div>
+                                      <h1 class="mt-5 text-xl font-semibold group-hover:text-blue-500">Shopping Mall</h1>
+                                      <p class="mt-2 text-xs text-gray-500">Alibaba Co</p>
+                                  </div>
+                                  <div>
+                                      <a class="tracking-wide hover-up-2 mr-2 inline-block px-4 py-3 text-xs text-blue-500 font-semibold leading-none border border-blue-200 hover:border-blue-500 hover:text-white hover:bg-blue-500 rounded">View Details</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="py-20 xl:bg-contain bg-top bg-no-repeat" style="background-image: url('assets/imgs/backgrounds/intersect.svg')">
+  <div class="container px-4 mx-auto">
+      <div class="text-center mb-16">
+          <h2 class="max-w-lg mx-auto mb-4 text-4xl font-bold font-heading wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
+              <span>Start saving time today and</span>
+              <span class="text-blue-500">choose</span>
+              <span>your best plan</span>
+          </h2>
+          <p class="max-w-sm mx-auto text-lg text-blueGray-400 wow animate__animated animate__fadeInDown" data-wow-delay=".5s">Best for freelance developers who need to save their time</p>
+      </div>
+      <div class="flex flex-wrap -mx-3">
+          <div class="w-full md:w-1/2 lg:w-1/3 px-3 mb-6">
+              <div class="hover-up-5 pt-16 pb-8 px-4 text-center bg-white rounded shadow wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
+                  <img class="h-20 mb-6 mx-auto" src="assets/imgs/icons/startup.svg" alt="" />
+                  <h3 class="mb-2 text-4xl font-bold font-heading">Startup</h3>
+                  <span class="text-4xl text-blue-500 font-bold font-heading">$45.99</span>
+                  <p class="mt-2 mb-8 text-blueGray-400">user per month</p>
+                  <div class="flex flex-col items-center mb-8">
+                      <ul class="text-blueGray-400">
+                          <li class="flex mb-3">
+                              <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                              <span>3 Emails</span>
+                          </li>
+                          <li class="flex mb-3">
+                              <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                              <span>1 Datebases</span>
+                          </li>
+                          <li class="flex mb-3">
+                              <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                              <span>Unlimited Domains</span>
+                          </li>
+                          <li class="flex">
+                              <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                              <span>10 GB Storage</span>
+                          </li>
+                      </ul>
+                  </div>
+                  <div>
+                      <a class="block sm:inline-block py-4 px-6 mb-4 sm:mb-0 sm:mr-3 text-xs text-white text-center font-semibold leading-none bg-blue-400 hover:bg-blue-500 rounded" href="#">Start Free Trial</a>
+                      <a class="block sm:inline-block py-4 px-6 text-xs text-blueGray-500 hover:text-blueGray-600 text-center font-semibold leading-none bg-white border border-blueGray-200 hover:border-blueGray-300 rounded" href="#">Purchase</a>
+                  </div>
+              </div>
+          </div>
+          <div class="w-full md:w-1/2 lg:w-1/3 px-3 mb-6">
+              <div class="hover-up-5 pt-16 pb-8 px-4 text-center text-white bg-blue-500 rounded shadow wow animate__animated animate__fadeInUp" data-wow-delay=".4s">
+                  <img class="h-20 mb-6 mx-auto" src="assets/imgs/icons/agency.svg" alt="" />
+                  <h3 class="mb-2 text-4xl font-bold font-heading">Agency</h3>
+                  <span class="text-4xl font-bold font-heading">$65.99</span>
+                  <p class="mt-2 mb-8">user per month</p>
+                  <div class="flex flex-col items-center mb-8">
+                      <ul>
+                          <li class="flex items-center mb-3">
+                              <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                              <span>6 Emails</span>
+                          </li>
+                          <li class="flex items-center mb-3">
+                              <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                              <span>4 Datebases</span>
+                          </li>
+                          <li class="flex items-center mb-3">
+                              <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                              <span>Unlimited Domains</span>
+                          </li>
+                          <li class="flex items-center">
+                              <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                              <span>35 GB Storage</span>
+                          </li>
+                      </ul>
+                  </div>
+                  <div>
+                      <a class="block sm:inline-block py-4 px-6 mb-4 sm:mb-0 sm:mr-3 text-xs text-blue-500 font-semibold leading-none bg-white hover:bg-blueGray-50 rounded" href="#">Start Free Trial</a>
+                      <a class="block sm:inline-block py-4 px-6 text-xs font-semibold leading-none border border-blue-500 hover:border-blue-400 rounded" href="#">Purchase</a>
+                  </div>
+              </div>
+          </div>
+          <div class="w-full lg:w-1/3 px-3 mb-6">
+              <div class="hover-up-5 pt-16 pb-8 px-4 text-center bg-white rounded shadow wow animate__animated animate__fadeInUp" data-wow-delay=".6s">
+                  <img class="h-20 mb-6 mx-auto" src="assets/imgs/icons/enterprise.svg" alt="" />
+                  <h3 class="mb-2 text-4xl font-bold font-heading">Enterprise</h3>
+                  <span class="text-4xl text-blue-500 font-bold font-heading">$85.99</span>
+                  <p class="mt-2 mb-8 text-blueGray-400">user per month</p>
+                  <div class="flex flex-col items-center mb-8">
+                      <ul class="text-blueGray-400">
+                          <li class="flex mb-3">
+                              <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                              <span>12 Emails</span>
+                          </li>
+                          <li class="flex mb-3">
+                              <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                              <span>8 Datebases</span>
+                          </li>
+                          <li class="flex mb-3">
+                              <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                              <span>Unlimited Domains</span>
+                          </li>
+                          <li class="flex">
+                              <svg class="w-6 h-6 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                              <span>50 GB Storage</span>
+                          </li>
+                      </ul>
+                  </div>
+                  <div>
+                      <a class="block sm:inline-block py-4 px-6 mb-4 sm:mb-0 sm:mr-3 text-xs text-white text-center font-semibold leading-none bg-blue-400 hover:bg-blue-500 rounded" href="#">Start Free Trial</a>
+                      <a class="block sm:inline-block py-4 px-6 text-xs text-blueGray-500 hover:text-blueGray-600 text-center font-semibold leading-none bg-white border border-blueGray-200 hover:border-blueGray-300 rounded" href="#">Purchase</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<section class="py-20">
+  <div class="container px-4 mx-auto wow animate__animated animate__fadeIn" data-wow-delay=".3s">
+      <div class="flex flex-wrap mb-12 lg:mb-20 -mx-3 text-center lg:text-left">
+          <div class="w-full lg:w-1/5 px-3 mb-6 lg:mb-0">
+              <a class="inline-block mx-auto lg:mx-0 text-3xl font-semibold leading-none" href="index.html">
+                  <img class="h-10" src="assets/imgs/logos/monst-logo.svg" alt="" />
+              </a>
+          </div>
+          <div class="w-full lg:w-2/5 px-3 mb-8 lg:mb-0">
+              <p class="max-w-md mx-auto lg:max-w-full lg:mx-0 lg:pr-32 lg:text-lg text-blueGray-400 leading-relaxed">Helping you <strong>maximize</strong> operations management with digitization</p>
+          </div>
+          <div class="w-full lg:w-1/5 px-3 mb-8 lg:mb-0">
+              <p class="mb-2 lg:mb-4 lg:text-lg font-bold font-heading text-blueGray-800">Office</p>
+              <p class="lg:text-lg text-blueGray-400">359 Hidden Valley Road, NY</p>
+          </div>
+          <div class="w-full lg:w-1/5 px-3">
+              <p class="mb-2 lg:mb-4 lg:text-lg font-bold font-heading text-blueGray-800">Contacts</p>
+              <p class="lg:text-lg text-blueGray-400">(+01) 234 568</p>
+              <p class="lg:text-lg text-blueGray-400"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="62010d0c16030116220f0d0c11164c010d0f">[email&#160;protected]</a></p>
+          </div>
+      </div>
+      <div class="flex flex-col lg:flex-row items-center lg:justify-between">
+          <p class="text-sm text-blueGray-400">&copy; 2021. All rights reserved. Designed by <a class="text-blue-400" href="https://alithemes.com" target="_blank">Alithemes.com</a></p>
+          <div class="order-first lg:order-last -mx-2 mb-4 lg:mb-0">
+              <a class="inline-block px-2" href="#">
+                  <img src="assets/imgs/icons/facebook-blue.svg" alt="" />
+              </a>
+              <a class="inline-block px-2" href="#">
+                  <img src="assets/imgs/icons/twitter-blue.svg" alt="" />
+              </a>
+              <a class="inline-block px-2" href="#">
+                  <img src="assets/imgs/icons/instagram-blue.svg" alt="" />
+              </a>
+          </div>
+      </div>
+  </div>
+</section>
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+<script src="assets/js/slick.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
